@@ -8,6 +8,7 @@ export const Router = () => (
   <Routes>
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
+      <Route path="category/:category" element={<Home />} />
       <Route path="checkout" element={<Cart />} />
       <Route path="product/:id" element={<ProductDetails />} />
     </Route>

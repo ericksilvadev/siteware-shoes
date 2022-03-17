@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { StoreProvider } from './context/StoreContext';
+import { Router } from './Router';
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
-      <App />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
