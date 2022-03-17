@@ -1,10 +1,13 @@
-import { useGetProducts } from './hooks/useGetProducts';
+import { Header } from './components/Header';
+import { GlobalStyle } from './styles/global';
 
 function App() {
-  const test = useGetProducts('products/1').then(console.log);
-  console.log(test);
-
-  return <div className="App">SITEWARE SHOES</div>;
+  return (
+    <>
+      <Header />
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
