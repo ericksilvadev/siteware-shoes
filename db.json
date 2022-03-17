@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tênis Nike Revolution 5 - Feminino",
+      "category": "shoes",
+      "image": "/src/assets/images/shoe-1.png",
+      "colors": ["Cinza", "Branco", "Verde", "Preto"],
+      "sizes": [36, 38, 40, 42, 44],
+      "rating": 4.7,
+      "defaultPrice": 319.99,
+      "promotionPrice": 219.99,
+      "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto",
+      "sale": { "pay": "1", "take": 2 }
+    },
+    {
+      "id": 2,
+      "name": "Tênis Nike Oxen - Masculino",
+      "category": "shoes",
+      "image": "/src/assets/images/shoe-2.png",
+      "colors": ["Cinza", "Branco", "Verde", "Preto"],
+      "sizes": [36, 38, 40, 42, 44],
+      "rating": 4.5,
+      "defaultPrice": 429.99,
+      "promotionPrice": 369.99,
+      "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
+    },
+    {
+      "id": 3,
+      "name": "Tênis Undefined - Masculino",
+      "category": "shoes",
+      "image": "/src/assets/images/shoe-3.png",
+      "colors": ["Cinza", "Branco", "Verde", "Preto"],
+      "sizes": [36, 38, 40, 42, 44],
+      "rating": 5,
+      "defaultPrice": 239.99,
+      "promotionPrice": 199.99,
+      "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
+    },
+    {
+      "id": 4,
+      "name": "Meia Asics Single Tech Adulto",
+      "category": "socks",
+      "image": "/src/assets/images/sock-1.png",
+      "colors": ["Cinza", "Branco", "Verde", "Preto"],
+      "sizes": [36, 38, 40, 42, 44],
+      "rating": 4.1,
+      "defaultPrice": 39.99,
+      "promotionPrice": 14.99,
+      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque"
+    },
+    {
+      "id": 4,
+      "name": "Meia Gonew Cano Alto Feminino",
+      "category": "socks",
+      "image": "/src/assets/images/sock-2.png",
+      "colors": ["Cinza", "Branco", "Verde", "Preto"],
+      "sizes": [36, 38, 40, 42, 44],
+      "rating": 4.5,
+      "defaultPrice": 49.99,
+      "promotionPrice": 25.99,
+      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque",
+      "sale": { "pay": "10 reais", "take": 3 }
+    }
+  ]
+}
