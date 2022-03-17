@@ -6,8 +6,7 @@ import personIcon from '/src/assets/icons/icon-person.svg';
 export const Header = () => {
   return (
     <Container>
-      <h1>Siteware Shoes</h1>
-
+      <div className="heading-frame" />
       <div className="search-input">
         <input type="text" placeholder="O quê você procura" />
         <img className="icon" src={searchIcon} alt="Buscar" />

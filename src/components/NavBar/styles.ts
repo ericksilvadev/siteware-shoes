@@ -31,6 +31,15 @@ export const Container = styled.section`
     cursor: pointer;
   }
 
+  h1 {
+    position: absolute;
+    top: 1rem;
+    right: -17rem;
+    width: 14rem;
+    color: var(--color-primary);
+    font-weight: 400;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -38,7 +47,7 @@ export const Container = styled.section`
     margin-top: 2rem;
 
     button {
-      width: 75%;
+      width: 85%;
       border-radius: 3px;
       padding: 0.3rem 0;
       cursor: default;
@@ -62,6 +71,7 @@ export const Container = styled.section`
     .popup-nav {
       position: fixed;
       top: 0;
+      z-index: -1;
       left: -20rem;
       height: 100vh;
       background-color: var(--color-primary-light);
@@ -71,8 +81,7 @@ export const Container = styled.section`
       opacity: 0;
 
       box-shadow: 2px 0 8px 2px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s;
-
+      transition: all 0.4s;
       li {
         margin-top: 1.38rem;
         width: 111%;

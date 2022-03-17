@@ -10,11 +10,12 @@ import { useState } from 'react';
 export const NavBar = () => {
   const [showNav, setShowNav] = useState(false);
   const { pathname } = useLocation();
-  // const handlePopupNav = () => {};
+
   return (
     <Container onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)}>
       <div className="nav-main">
         <img src={logo} alt="Siteware Shoes" className="icon logo" />
+        <h1>Siteware Shoes</h1>
 
         <nav>
           <button type="button" className={pathname === '/' ? 'selected' : ''}>

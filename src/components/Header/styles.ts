@@ -14,9 +14,8 @@ export const Container = styled.header`
   position: fixed;
   top: 0;
 
-  h1 {
-    color: var(--color-primary);
-    font-weight: 400;
+  .heading-frame {
+    width: 14rem;
   }
 
   .search-input {
