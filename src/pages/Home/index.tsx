@@ -1,3 +1,10 @@
+import { Banner } from '../../components/Banner';
 import { Container } from './styles';
 
-export const Home = () => <Container>Home</Container>;
+export const Home = () => {
+  return (
+    <Container>
+      <Banner />
+    </Container>
+  );
+};
