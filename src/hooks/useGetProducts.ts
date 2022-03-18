@@ -2,7 +2,7 @@ import { api } from '../services/api';
 
 // Custom hook to get products
 
-export const useGetProducts = async (endpoint: string) => {
+export const useGetProducts = async (endpoint: string, filter?: string) => {
   try {
     const response = await api.get(endpoint);
 
@@ -12,10 +12,12 @@ export const useGetProducts = async (endpoint: string) => {
       return { productDetail: response.data };
     }
 
-    const shoes = products.filter((item) => item.category === 'shoes');
-    const socks = products.filter((item) => item.category === 'socks');
+    if (filter) {
+      const filteredProducts = products.filter((item) => item.category === filter);
+      return { products: filteredProducts };
+    }
 
-    return { products, socks, shoes };
+    return { products };
   } catch (err) {
     console.log(err);
     return { products: [], socks: [], shoes: [] };

@@ -4,12 +4,26 @@ import homeIcon from '/src/assets/icons/icon-home.svg';
 import shoeIcon from '/src/assets/icons/icon-shoe.svg';
 import sockIcon from '/src/assets/icons/icon-sock.svg';
 import cogIcon from '/src/assets/icons/icon-cog.svg';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { StoreContext } from '../../context/StoreContext';
 
 export const NavBar = () => {
   const [showNav, setShowNav] = useState(false);
+
+  const { setFilter } = useContext(StoreContext);
+
   const { pathname } = useLocation();
+
+  const { category } = useParams();
+
+  useEffect(() => {
+    setFilter(category);
+  }, []);
+
+  const handleCLick = (filter?: string) => {
+    setFilter(filter);
+  };
 
   return (
     <Container onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)}>
@@ -18,21 +32,25 @@ export const NavBar = () => {
         <h1>Siteware Shoes</h1>
 
         <nav>
-          <button type="button" className={pathname === '/' ? 'selected' : ''}>
+          <button className={pathname === '/' ? 'selected' : ''}>
             <img src={homeIcon} alt="Produtos" className="icon" />
           </button>
 
-          <button type="button" className={pathname.includes('/shoes') ? 'selected' : ''}>
+          <button className={pathname.includes('/shoes') ? 'selected' : ''}>
             <img src={shoeIcon} alt="Calçados" className="icon" />
           </button>
 
-          <button type="button" className={pathname.includes('/socks') ? 'selected' : ''}>
+          <button className={pathname.includes('/socks') ? 'selected' : ''}>
             <img src={sockIcon} alt="Meias" className="icon" />
           </button>
 
           <ul className={showNav ? 'show popup-nav' : 'popup-nav'}>
             <li>
-              <Link to="/" className={pathname === '/' ? 'selected' : ''}>
+              <Link
+                to="/"
+                className={pathname === '/' ? 'selected' : ''}
+                onClick={() => handleCLick()}
+              >
                 Produtos
               </Link>
             </li>
@@ -41,6 +59,7 @@ export const NavBar = () => {
               <Link
                 to="/category/shoes"
                 className={pathname.includes('/shoes') ? 'selected' : ''}
+                onClick={() => handleCLick('shoes')}
               >
                 Calçados
               </Link>
@@ -50,6 +69,7 @@ export const NavBar = () => {
               <Link
                 to="/category/socks"
                 className={pathname.includes('/socks') ? 'selected' : ''}
+                onClick={() => handleCLick('socks')}
               >
                 Meias
               </Link>
