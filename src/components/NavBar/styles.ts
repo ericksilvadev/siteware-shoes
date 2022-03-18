@@ -34,7 +34,7 @@ export const Container = styled.section`
   h1 {
     font-size: 2rem;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0.5rem;
     right: -15.3rem;
     width: 14rem;
@@ -79,6 +79,7 @@ export const Container = styled.section`
       padding: 6.4rem 1rem;
       list-style-type: none;
       opacity: 0;
+      z-index: 1;
 
       box-shadow: 2px 0 8px 2px rgba(0, 0, 0, 0.2);
       transition: all 0.4s;

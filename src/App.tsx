@@ -6,10 +6,10 @@ import { GlobalStyle } from './styles/global';
 function App() {
   return (
     <>
+      <Outlet />
       <Header />
       <NavBar />
       <GlobalStyle />
-      <Outlet />
     </>
   );
 }

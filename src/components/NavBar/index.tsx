@@ -36,6 +36,7 @@ export const NavBar = () => {
         <nav>
           <Link
             to="/"
+            onClick={() => handleCLick()}
             className={pathname === '/' ? 'selected icon-container' : ' icon-container'}
           >
             <img src={homeIcon} alt="Produtos" className="icon" />
@@ -43,6 +44,7 @@ export const NavBar = () => {
 
           <Link
             to="category/shoes"
+            onClick={() => handleCLick('shoes')}
             className={
               pathname.includes('/shoes') ? 'selected icon-container' : ' icon-container'
             }
@@ -52,6 +54,7 @@ export const NavBar = () => {
 
           <Link
             to="category/socks"
+            onClick={() => handleCLick('socks')}
             className={
               pathname.includes('/socks') ? 'selected icon-container' : ' icon-container'
             }

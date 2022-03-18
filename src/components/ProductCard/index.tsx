@@ -11,8 +11,8 @@ interface IProductCard {
 
 export const ProductCard: React.FC<IProductCard> = ({ product }) => {
   return (
-    <Link to={`product/${product.id}`} style={{ color: '#333' }}>
-      <Container>
+    <Container>
+      <Link to={`/product/${product.id}`} style={{ color: '#333' }}>
         {product.sale && (
           <span
             className={product.category === 'socks' ? 'sale-label purple' : 'sale-label'}
@@ -28,7 +28,7 @@ export const ProductCard: React.FC<IProductCard> = ({ product }) => {
           <img className="icon" src={cartIcon} alt="Comprar" />
           Comprar
         </button>
-      </Container>
-    </Link>
+      </Link>
+    </Container>
   );
 };
