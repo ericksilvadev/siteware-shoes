@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: calc(100% -3.5rem);
-  height: 100%;
+  width: calc(100% - 3.5rem);
+  min-height: calc(100vh - 4rem);
   display: grid;
   place-items: center;
 
@@ -124,6 +124,20 @@ export const Content = styled.main`
         &.selected {
           border-color: #006eff;
         }
+
+        &.Cinza {
+          background-color: #ccc;
+        }
+
+        &.Verde {
+          background-color: var(--color-accent);
+          color: white;
+        }
+
+        &.Preto {
+          background-color: black;
+          color: white;
+        }
       }
     }
 
@@ -132,7 +146,7 @@ export const Content = styled.main`
       flex-direction: column;
 
       .rating-stars {
-        margin-left: -4px;
+        transform: scale(1.1) translateX(0.75rem);
       }
     }
   }
@@ -163,8 +177,15 @@ export const Content = styled.main`
         width: 1.6rem;
         height: 1.6rem;
       }
+
       a {
         color: white;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

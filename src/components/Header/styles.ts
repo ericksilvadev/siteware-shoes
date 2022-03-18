@@ -59,6 +59,7 @@ export const Container = styled.header`
 
     button {
       text-transform: uppercase;
+      color: var(--color-text);
       font-size: 0.8rem;
       font-weight: 600;
       background-color: transparent;
@@ -70,7 +71,8 @@ export const Container = styled.header`
         margin-left: 1rem;
       }
 
-      &:hover {
+      &:hover,
+      a:hover {
         color: var(--color-primary);
       }
     }
@@ -82,6 +84,10 @@ export const Container = styled.header`
     .cart {
       position: relative;
       padding-right: 0;
+
+      a {
+        color: var(--color-text);
+      }
 
       .empty-cart {
         cursor: default;

@@ -3,8 +3,12 @@ import cartIcon from '/src/assets/icons/icon-cart.svg';
 import personIcon from '/src/assets/icons/icon-person.svg';
 
 import { Container } from './styles';
+import { useContext } from 'react';
+import { StoreContext } from '../../context/StoreContext';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
+  const { totalQuantity } = useContext(StoreContext);
   return (
     <Container>
       <div className="heading-frame" />
@@ -23,10 +27,11 @@ export const Header = () => {
         <div className="cart">
           <img className="icon" src={cartIcon} alt="Carrinho" />
           <button type="button" className="cart">
-            Meu carrinho
+            <Link to="/cart">Meu carrinho</Link>
           </button>
-          <span className="items-quantity">2</span>
-          <span className="empty-cart">Vazio</span>
+          {totalQuantity > 0 && <span className="items-quantity">{totalQuantity}</span>}
+
+          {!totalQuantity && <span className="empty-cart">Vazio</span>}
         </div>
       </div>
     </Container>

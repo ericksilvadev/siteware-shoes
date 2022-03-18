@@ -5,23 +5,24 @@ import { useGetProducts } from '../../hooks/useGetProducts';
 import { ProductCard } from '../../components/ProductCard';
 
 import { Container } from './styles';
+import { useParams } from 'react-router-dom';
 
 export const ProductsList = () => {
   const [products, setProducts] = useState<Store.IProduct[]>([]);
 
-  const { filter } = useContext(StoreContext);
+  const { category } = useParams();
 
   const fetchProducts = useCallback(async () => {
-    const { products: pd } = await useGetProducts('products', filter);
+    const { products: pd } = await useGetProducts('products', category);
 
     if (pd) {
       setProducts(pd);
     }
-  }, [filter]);
+  }, [category]);
 
   useEffect(() => {
     fetchProducts();
-  }, [filter]);
+  }, [category]);
 
   return (
     <Container>

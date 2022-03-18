@@ -6,26 +6,13 @@ import homeIcon from '/src/assets/icons/icon-home.svg';
 import shoeIcon from '/src/assets/icons/icon-shoe.svg';
 import sockIcon from '/src/assets/icons/icon-sock.svg';
 import cogIcon from '/src/assets/icons/icon-cog.svg';
-import { StoreContext } from '../../context/StoreContext';
 
 import { Container } from './styles';
 
 export const NavBar = () => {
   const [showNav, setShowNav] = useState(false);
 
-  const { setFilter } = useContext(StoreContext);
-
   const { pathname } = useLocation();
-
-  const { category } = useParams();
-
-  useEffect(() => {
-    setFilter(category);
-  }, []);
-
-  const handleCLick = (filter?: string) => {
-    setFilter(filter);
-  };
 
   return (
     <Container onMouseOver={() => setShowNav(true)} onMouseOut={() => setShowNav(false)}>
@@ -36,7 +23,6 @@ export const NavBar = () => {
         <nav>
           <Link
             to="/"
-            onClick={() => handleCLick()}
             className={pathname === '/' ? 'selected icon-container' : ' icon-container'}
           >
             <img src={homeIcon} alt="Produtos" className="icon" />
@@ -44,7 +30,6 @@ export const NavBar = () => {
 
           <Link
             to="category/shoes"
-            onClick={() => handleCLick('shoes')}
             className={
               pathname.includes('/shoes') ? 'selected icon-container' : ' icon-container'
             }
@@ -54,7 +39,6 @@ export const NavBar = () => {
 
           <Link
             to="category/socks"
-            onClick={() => handleCLick('socks')}
             className={
               pathname.includes('/socks') ? 'selected icon-container' : ' icon-container'
             }
@@ -64,11 +48,7 @@ export const NavBar = () => {
 
           <ul className={showNav ? 'show popup-nav' : 'popup-nav'}>
             <li>
-              <Link
-                to="/"
-                className={pathname === '/' ? 'selected' : ''}
-                onClick={() => handleCLick()}
-              >
+              <Link to="/" className={pathname === '/' ? 'selected' : ''}>
                 Produtos
               </Link>
             </li>
@@ -77,7 +57,6 @@ export const NavBar = () => {
               <Link
                 to="/category/shoes"
                 className={pathname.includes('/shoes') ? 'selected' : ''}
-                onClick={() => handleCLick('shoes')}
               >
                 Calçados
               </Link>
@@ -87,7 +66,6 @@ export const NavBar = () => {
               <Link
                 to="/category/socks"
                 className={pathname.includes('/socks') ? 'selected' : ''}
-                onClick={() => handleCLick('socks')}
               >
                 Meias
               </Link>

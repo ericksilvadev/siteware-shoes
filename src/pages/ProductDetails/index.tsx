@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Rating } from '@mui/material';
+import { CircularProgress, Rating } from '@mui/material';
 
 import { StoreContext } from '../../context/StoreContext';
 import { updateCart } from '../../helpers/updateCart';
@@ -44,7 +44,12 @@ export const ProductDetails = () => {
     }
   };
 
-  if (!product) return <h1>LOADING...</h1>;
+  if (!product)
+    return (
+      <Container>
+        <CircularProgress color="inherit" />
+      </Container>
+    );
 
   return (
     <Container>
@@ -110,8 +115,10 @@ export const ProductDetails = () => {
           <span className="default-price">{priceFormatter(product.defaultPrice)}</span>
           <span className="price">{priceFormatter(product.promotionPrice)}</span>
           <button type="button" className="green">
-            <img src={cartIcon} alt="Comprar" />
-            <Link to="cart">Comprar</Link>
+            <Link to="/checkout">
+              <img src={cartIcon} alt="Comprar" />
+              Comprar
+            </Link>
           </button>
         </aside>
       </Content>

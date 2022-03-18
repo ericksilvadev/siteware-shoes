@@ -5,8 +5,6 @@ interface IProvider {
 }
 
 interface IStoreContext {
-  filter: string | undefined;
-  setFilter: (param: string | undefined) => void;
   cart: Store.ICart[];
   setCart: (param: Store.ICart[]) => void;
   totalPrice: number;
@@ -16,7 +14,6 @@ interface IStoreContext {
 export const StoreContext = createContext({} as IStoreContext);
 
 export const StoreProvider = ({ children }: IProvider) => {
-  const [filter, setFilter] = useState<string | undefined>();
   const [cart, setCart] = useState<Store.ICart[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
@@ -37,9 +34,7 @@ export const StoreProvider = ({ children }: IProvider) => {
   }, [cart]);
 
   return (
-    <StoreContext.Provider
-      value={{ filter, setFilter, cart, setCart, totalPrice, totalQuantity }}
-    >
+    <StoreContext.Provider value={{ cart, setCart, totalPrice, totalQuantity }}>
       {children}
     </StoreContext.Provider>
   );
