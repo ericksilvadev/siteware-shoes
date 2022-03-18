@@ -7,9 +7,10 @@ export const Container = styled.div`
   align-items: center;
 
   > h1 {
-    margin-top: 1rem;
-    width: 70%;
-    max-width: 1350px;
+    margin-top: 1.5rem;
+    padding: 0 2rem 0 calc(2rem + 3.5rem);
+    width: 80%;
+    max-width: 1600px;
 
     color: var(--color-primary);
     font-weight: 400;

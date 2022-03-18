@@ -34,6 +34,7 @@ export const Container = styled.section`
   h1 {
     font-size: 2rem;
     position: absolute;
+    z-index: 1;
     top: 0.5rem;
     right: -15.3rem;
     width: 14rem;
@@ -63,7 +64,7 @@ export const Container = styled.section`
           filter: invert(0%);
         }
       }
-      + div {
+      + a {
         margin-top: 1rem;
       }
     }
@@ -71,21 +72,24 @@ export const Container = styled.section`
     .popup-nav {
       position: fixed;
       top: 0;
-      z-index: -1;
       left: -20rem;
       height: 100vh;
       background-color: var(--color-primary-light);
       width: 16rem;
-      padding: 4.9rem 1rem;
+      padding: 6.4rem 1rem;
       list-style-type: none;
       opacity: 0;
 
       box-shadow: 2px 0 8px 2px rgba(0, 0, 0, 0.2);
       transition: all 0.4s;
+
       li {
-        margin-top: 1.38rem;
-        width: 111%;
-        height: 2rem;
+        width: 114%;
+        height: 2.3rem;
+        margin-left: -0.4rem;
+        + li {
+          margin-top: 0.8rem;
+        }
 
         a {
           display: flex;

@@ -47,7 +47,8 @@
       "rating": 4.1,
       "defaultPrice": 39.99,
       "promotionPrice": 14.99,
-      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque"
+      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque",
+      "sale": { "pay": "10 reais", "take": 3 }
     },
     {
       "id": 5,
@@ -59,8 +60,7 @@
       "rating": 4.5,
       "defaultPrice": 49.99,
       "promotionPrice": 25.99,
-      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque",
-      "sale": { "pay": "10 reais", "take": 3 }
+      "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque"
     }
   ]
 }

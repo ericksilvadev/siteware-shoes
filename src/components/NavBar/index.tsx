@@ -32,27 +32,30 @@ export const NavBar = () => {
         <h1>Siteware Shoes</h1>
 
         <nav>
-          <div
+          <Link
+            to="/"
             className={pathname === '/' ? 'selected icon-container' : ' icon-container'}
           >
             <img src={homeIcon} alt="Produtos" className="icon" />
-          </div>
+          </Link>
 
-          <div
+          <Link
+            to="category/shoes"
             className={
               pathname.includes('/shoes') ? 'selected icon-container' : ' icon-container'
             }
           >
             <img src={shoeIcon} alt="Calçados" className="icon" />
-          </div>
+          </Link>
 
-          <div
+          <Link
+            to="category/socks"
             className={
               pathname.includes('/socks') ? 'selected icon-container' : ' icon-container'
             }
           >
             <img src={sockIcon} alt="Meias" className="icon" />
-          </div>
+          </Link>
 
           <ul className={showNav ? 'show popup-nav' : 'popup-nav'}>
             <li>
