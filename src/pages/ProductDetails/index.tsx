@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { MouseEventHandler, useCallback, useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CircularProgress, Rating } from '@mui/material';
 
@@ -13,6 +13,9 @@ import { Container, Content } from './styles';
 export const ProductDetails = () => {
   const [product, setProduct] = useState<Store.IProduct>();
   const [quantity, setQuantity] = useState(0);
+  const [selectedColor, setSelectedColor] = useState('Cinza');
+  const [selectedSize, setSelectedSize] = useState(42);
+
   const { cart, setCart } = useContext(StoreContext);
 
   const { id } = useParams();
@@ -39,7 +42,10 @@ export const ProductDetails = () => {
 
   const handleClick = () => {
     if (product) {
-      const updatedCart = updateCart({ product, quantity: quantity + 1 }, cart);
+      const updatedCart = updateCart(
+        { product, quantity: quantity + 1, color: selectedColor, size: selectedSize },
+        cart
+      );
       setCart(updatedCart);
     }
   };
@@ -69,6 +75,7 @@ export const ProductDetails = () => {
         </section>
         <article className="details">
           <p>{product.description}</p>
+
           {product.sale && (
             <div className="sale-container">
               <span
@@ -83,24 +90,37 @@ export const ProductDetails = () => {
               </span>
             </div>
           )}
+
           <div className="colors">
             <span className="label">Cor</span>
             <div className="colors-list">
               {product.colors.map((color) => (
-                <button type="button" className={color}>
+                <button
+                  onClick={() => setSelectedColor(color)}
+                  type="button"
+                  className={selectedColor === color ? `${color} selected` : color}
+                >
                   {color}
                 </button>
               ))}
             </div>
           </div>
+
           <div className="sizes">
             <span className="label">Tamanho</span>
             <div className="sizes-list">
               {product.sizes.map((size) => (
-                <button type="button">{size}</button>
+                <button
+                  onClick={() => setSelectedSize(size)}
+                  className={selectedSize === size ? 'selected' : ''}
+                  type="button"
+                >
+                  {size}
+                </button>
               ))}
             </div>
           </div>
+
           <div className="rating">
             <span className="label">Avaliações</span>
             <Rating
@@ -111,10 +131,12 @@ export const ProductDetails = () => {
             />
           </div>
         </article>
+
         <aside className="pricing">
           <span className="default-price">{priceFormatter(product.defaultPrice)}</span>
           <span className="price">{priceFormatter(product.promotionPrice)}</span>
-          <button type="button" className="green">
+
+          <button type="button" className="green" onClick={handleClick}>
             <Link to="/checkout">
               <img src={cartIcon} alt="Comprar" />
               Comprar

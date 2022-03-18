@@ -19,6 +19,8 @@ declare namespace Store {
 
   export interface ICart {
     quantity: number;
+    color: string;
+    size: number;
     product: Store.IProduct;
   }
 }
