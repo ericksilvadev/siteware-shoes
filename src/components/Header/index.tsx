@@ -1,7 +1,8 @@
-import { Container } from './styles';
 import searchIcon from '/src/assets/icons/icon-search.svg';
 import cartIcon from '/src/assets/icons/icon-cart.svg';
 import personIcon from '/src/assets/icons/icon-person.svg';
+
+import { Container } from './styles';
 
 export const Header = () => {
   return (

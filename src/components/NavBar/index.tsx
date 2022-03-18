@@ -1,12 +1,14 @@
-import { Container } from './styles';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
+
 import logo from '/src/assets/icons/siteware-shoes.svg';
 import homeIcon from '/src/assets/icons/icon-home.svg';
 import shoeIcon from '/src/assets/icons/icon-shoe.svg';
 import sockIcon from '/src/assets/icons/icon-sock.svg';
 import cogIcon from '/src/assets/icons/icon-cog.svg';
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../../context/StoreContext';
+
+import { Container } from './styles';
 
 export const NavBar = () => {
   const [showNav, setShowNav] = useState(false);

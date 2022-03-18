@@ -9,7 +9,7 @@ export const useGetProducts = async (endpoint: string, filter?: string) => {
     const products: Store.IProduct[] = response.data || [];
 
     if (!products.length) {
-      return { productDetail: response.data };
+      return { productDetails: response.data };
     }
 
     if (filter) {
