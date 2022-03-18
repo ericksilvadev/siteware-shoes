@@ -32,17 +32,27 @@ export const NavBar = () => {
         <h1>Siteware Shoes</h1>
 
         <nav>
-          <button className={pathname === '/' ? 'selected' : ''}>
+          <div
+            className={pathname === '/' ? 'selected icon-container' : ' icon-container'}
+          >
             <img src={homeIcon} alt="Produtos" className="icon" />
-          </button>
+          </div>
 
-          <button className={pathname.includes('/shoes') ? 'selected' : ''}>
+          <div
+            className={
+              pathname.includes('/shoes') ? 'selected icon-container' : ' icon-container'
+            }
+          >
             <img src={shoeIcon} alt="Calçados" className="icon" />
-          </button>
+          </div>
 
-          <button className={pathname.includes('/socks') ? 'selected' : ''}>
+          <div
+            className={
+              pathname.includes('/socks') ? 'selected icon-container' : ' icon-container'
+            }
+          >
             <img src={sockIcon} alt="Meias" className="icon" />
-          </button>
+          </div>
 
           <ul className={showNav ? 'show popup-nav' : 'popup-nav'}>
             <li>

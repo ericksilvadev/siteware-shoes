@@ -32,9 +32,10 @@ export const Container = styled.section`
   }
 
   h1 {
+    font-size: 2rem;
     position: absolute;
-    top: 1rem;
-    right: -17rem;
+    top: 0.5rem;
+    right: -15.3rem;
     width: 14rem;
     color: var(--color-primary);
     font-weight: 400;
@@ -46,11 +47,10 @@ export const Container = styled.section`
     align-items: center;
     margin-top: 2rem;
 
-    button {
+    .icon-container {
       width: 85%;
       border-radius: 3px;
       padding: 0.3rem 0;
-      cursor: default;
 
       display: flex;
       align-items: center;
@@ -63,7 +63,7 @@ export const Container = styled.section`
           filter: invert(0%);
         }
       }
-      + button {
+      + div {
         margin-top: 1rem;
       }
     }

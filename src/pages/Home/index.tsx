@@ -1,31 +1,29 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Banner } from '../../components/Banner';
-import { StoreContext } from '../../context/StoreContext';
-import { useGetProducts } from '../../hooks/useGetProducts';
+import { ProductsList } from '../../components/ProductsList';
+
 import { Container } from './styles';
 
+interface IPageTitles {
+  [key: string]: string;
+}
+
 export const Home = () => {
-  const [products, setProducts] = useState<Store.IProduct[]>([]);
+  const pageTitle: IPageTitles = {
+    shoes: 'Calçados',
+    socks: 'Meias',
+    home: 'Produtos',
+  };
 
-  const { filter } = useContext(StoreContext);
+  const { category } = useParams();
 
-  const fetchProducts = useCallback(async () => {
-    const { products: pd } = await useGetProducts('products', filter);
-
-    if (pd) {
-      console.log(pd);
-
-      setProducts(pd);
-    }
-  }, [filter]);
-
-  useEffect(() => {
-    fetchProducts();
-  }, [filter]);
+  const location = category || 'home';
 
   return (
     <Container>
       <Banner />
+      <h1>{pageTitle[location]}</h1>
+      <ProductsList />
     </Container>
   );
 };

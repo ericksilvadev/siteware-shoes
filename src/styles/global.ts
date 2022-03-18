@@ -35,4 +35,34 @@ export const GlobalStyle = createGlobalStyle`
     width: 1rem;
     height: 1rem;
   }
+
+  button.green {
+    background-color: var(--color-accent);
+    border: none;
+    cursor: pointer;
+    height: 2.2rem;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+
+    img {
+      filter: invert(100%);
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: 0.5rem;
+
+      transform: translateY(-2px);
+    }
+    &:hover {
+      background-color: var(--color-accent-darker);
+    }
+  }
 `;
