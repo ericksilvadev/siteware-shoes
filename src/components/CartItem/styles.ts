@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  background-color: var(--color-box-background);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
-
   position: relative;
   padding: 1rem;
   width: 100%;
@@ -46,11 +41,6 @@ export const Container = styled.section`
 
       .info {
         margin-left: 1.5rem;
-
-        h1,
-        strong {
-          font-weight: 500;
-        }
 
         span {
           color: var(--color-text-complementary);
@@ -130,7 +120,6 @@ export const Container = styled.section`
 
       strong {
         color: var(--color-text);
-        font-weight: 500;
         font-size: 1.2rem;
       }
     }

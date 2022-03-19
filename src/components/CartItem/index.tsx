@@ -6,6 +6,7 @@ import { useUpdatePrice } from '../../hooks/useUpdatePrice';
 import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container } from './styles';
+import { SaleLable } from '../SaleLable';
 
 interface ICartItem {
   item: Store.ICart;
@@ -13,14 +14,18 @@ interface ICartItem {
 
 export const CartItem: React.FC<ICartItem> = ({ item }) => {
   const [itemTotalPrice, setItemTotalPrice] = useState(0);
+  const [isSaleActive, SetIsSaleActive] = useState(false);
   const { cart, setCart } = useContext(StoreContext);
 
   useEffect(() => {
-    const { itemTotalPrice: itemTotal } = useUpdatePrice(cart, item.product.id);
-    setItemTotalPrice(itemTotal);
-  }, [cart]);
+    const { itemTotalPrice: itemTotal, isSaleActive: sale } = useUpdatePrice(
+      cart,
+      item.product.id
+    );
 
-  // item = { ...item, itemTotalPrice };
+    setItemTotalPrice(itemTotal);
+    SetIsSaleActive(sale);
+  }, [cart]);
 
   const handleUpdateQuantity = (quantity: number) => {
     if (quantity < 1) return;
@@ -43,14 +48,8 @@ export const CartItem: React.FC<ICartItem> = ({ item }) => {
   };
 
   return (
-    <Container>
-      {item.product.sale && (
-        <span
-          className={
-            item.product.category === 'socks' ? 'sale-label purple' : 'sale-label'
-          }
-        >{`Leve ${item.product.sale.take} Pague ${item.product.sale.pay}`}</span>
-      )}
+    <Container className="default-box">
+      {item.product.sale && <SaleLable product={item.product} />}
 
       <div className="main-content">
         <div>
@@ -96,14 +95,14 @@ export const CartItem: React.FC<ICartItem> = ({ item }) => {
           </button>
         </div>
 
-        {item.product.sale && (
+        {isSaleActive && (
           <span
             className={
               item.product.category === 'socks' ? 'sale-info purple' : 'sale-info'
             }
           >
-            Você está levando <strong>{item.product.sale.take}</strong> e pagando{' '}
-            <strong>{item.product.sale.pay}</strong>
+            Você está levando <strong>{item.product.sale?.take}</strong> e pagando{' '}
+            <strong>{item.product.sale?.pay}</strong>
           </span>
         )}
 

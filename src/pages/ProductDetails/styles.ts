@@ -16,10 +16,6 @@ export const Content = styled.main`
   height: 60vh;
   padding: 1.5rem;
   max-width: 1300px;
-  background-color: var(--color-box-background);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
 
   display: flex;
   justify-content: space-between;
@@ -29,10 +25,6 @@ export const Content = styled.main`
     min-width: 560px;
     align-self: center;
     height: 100%;
-
-    h1 {
-      font-weight: 500;
-    }
 
     .images {
       margin-top: 2rem;
@@ -165,7 +157,6 @@ export const Content = styled.main`
     .price {
       display: block;
       font-size: 2.2rem;
-      font-weight: 500;
     }
 
     button {

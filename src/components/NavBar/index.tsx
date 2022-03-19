@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import logo from '/src/assets/icons/siteware-shoes.svg';
 import homeIcon from '/src/assets/icons/icon-home.svg';

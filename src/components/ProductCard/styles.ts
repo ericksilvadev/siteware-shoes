@@ -3,11 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   position: relative;
   width: 16rem;
-  background-color: var(--color-box-background);
   padding: 1.4rem;
-  border-radius: 10px;
-  border: 1px solid var(--color-text-complementary);
-  box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.1);
 
   display: flex;
   flex-direction: column;
@@ -32,7 +28,6 @@ export const Container = styled.section`
 
   h1 {
     font-size: 1.3rem;
-    font-weight: 600;
   }
 
   .pricing {
@@ -49,7 +44,7 @@ export const Container = styled.section`
 
     .price {
       font-size: 1.7rem;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 

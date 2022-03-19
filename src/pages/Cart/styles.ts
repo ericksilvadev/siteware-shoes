@@ -11,19 +11,9 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.main`
-  background-color: var(--color-box-background);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
-
   width: 80%;
   max-width: 1300px;
   padding: 1.5rem;
-
-  h1,
-  strong {
-    font-weight: 500;
-  }
 
   .heading {
     display: flex;
@@ -55,11 +45,6 @@ export const Content = styled.main`
     }
 
     .resume {
-      background-color: var(--color-box-background);
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
-
       height: 15rem;
       width: 35%;
       padding: 1rem;

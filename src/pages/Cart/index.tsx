@@ -2,16 +2,18 @@ import { useContext } from 'react';
 
 import { StoreContext } from '../../context/StoreContext';
 import { priceFormatter } from '../../helpers/priceFormatter';
-import trashIcon from '/src/assets/icons/icon-trash.svg';
 import { CartItem } from '../../components/CartItem';
+import { Loading } from '../../components/Loading';
+import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container, Content } from './styles';
 
 export const Cart = () => {
   const { cart, totalPrice, subtotalPrice, setCart } = useContext(StoreContext);
+
   return (
     <Container>
-      <Content>
+      <Content className="default-box">
         <div className="heading">
           <h1>Meu Carrinho</h1>
 
@@ -24,11 +26,11 @@ export const Cart = () => {
         <section className="products-area">
           <div className="products-list">
             {cart.map((item) => (
-              <CartItem item={item} />
+              <CartItem key={item.product.id} item={item} />
             ))}
           </div>
 
-          <aside className="resume">
+          <aside className="resume default-box">
             <h1>Resumo da compra</h1>
 
             <div className="price-info">

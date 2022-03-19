@@ -2,12 +2,11 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
   let result = {
     totalPrice: 0,
     itemTotalPrice: 0,
+    isSaleActive: false,
   };
 
   cart.reduce((acc, curr) => {
     if (curr.product.sale?.take && curr.quantity >= curr.product.sale?.take) {
-      console.log('teste');
-
       // Updates total price according to item sale
       const remainder = curr.quantity % curr.product.sale.take;
 
@@ -19,7 +18,7 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
       acc += itemTotalPrice;
 
       if (id && curr.product.id === id) {
-        result = { itemTotalPrice, totalPrice: acc };
+        result = { isSaleActive: true, itemTotalPrice, totalPrice: acc };
       }
 
       result = { ...result, totalPrice: acc };
@@ -30,6 +29,7 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
 
     if (id && curr.product.id === id) {
       result = {
+        ...result,
         itemTotalPrice: curr.product.promotionPrice * curr.quantity,
         totalPrice: acc,
       };

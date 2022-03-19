@@ -1,11 +1,11 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { StoreContext } from '../../context/StoreContext';
 import { useGetProducts } from '../../hooks/useGetProducts';
 import { ProductCard } from '../../components/ProductCard';
+import { Loading } from '../Loading';
 
 import { Container } from './styles';
-import { useParams } from 'react-router-dom';
 
 export const ProductsList = () => {
   const [products, setProducts] = useState<Store.IProduct[]>([]);
@@ -23,6 +23,14 @@ export const ProductsList = () => {
   useEffect(() => {
     fetchProducts();
   }, [category]);
+
+  if (!products.length) {
+    return (
+      <Container style={{ justifyContent: 'center' }}>
+        <Loading />
+      </Container>
+    );
+  }
 
   return (
     <Container>

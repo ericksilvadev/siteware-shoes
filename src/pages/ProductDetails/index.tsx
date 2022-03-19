@@ -4,8 +4,10 @@ import { CircularProgress, Rating } from '@mui/material';
 
 import { StoreContext } from '../../context/StoreContext';
 import { updateCart } from '../../helpers/updateCart';
-import { useGetProducts } from '../../hooks/useGetProducts';
 import { priceFormatter } from '../../helpers/priceFormatter';
+import { useGetProducts } from '../../hooks/useGetProducts';
+import { SaleLable } from '../../components/SaleLable';
+import { Loading } from '../../components/Loading';
 import cartIcon from '/src/assets/icons/icon-cart.svg';
 
 import { Container, Content } from './styles';
@@ -50,16 +52,17 @@ export const ProductDetails = () => {
     }
   };
 
-  if (!product)
+  if (!product) {
     return (
       <Container>
-        <CircularProgress color="inherit" />
+        <Loading />
       </Container>
     );
+  }
 
   return (
     <Container>
-      <Content>
+      <Content className="default-box">
         <section className="heading">
           <h1>{product.name}</h1>
           <div className="images">
@@ -78,11 +81,7 @@ export const ProductDetails = () => {
 
           {product.sale && (
             <div className="sale-container">
-              <span
-                className={
-                  product.category === 'socks' ? 'sale-label purple' : 'sale-label'
-                }
-              >{`Leve ${product.sale.take} Pague ${product.sale.pay}`}</span>
+              <SaleLable product={product} />
 
               <span className={product.category === 'socks' ? 'sale purple' : 'sale'}>
                 Compre <strong>{product.sale.take}</strong> pares e pague somente{' '}
@@ -96,6 +95,7 @@ export const ProductDetails = () => {
             <div className="colors-list">
               {product.colors.map((color) => (
                 <button
+                  key={color}
                   onClick={() => setSelectedColor(color)}
                   type="button"
                   className={selectedColor === color ? `${color} selected` : color}
@@ -111,6 +111,7 @@ export const ProductDetails = () => {
             <div className="sizes-list">
               {product.sizes.map((size) => (
                 <button
+                  key={size}
                   onClick={() => setSelectedSize(size)}
                   className={selectedSize === size ? 'selected' : ''}
                   type="button"
@@ -127,7 +128,7 @@ export const ProductDetails = () => {
               className="rating-stars"
               readOnly
               value={product.rating}
-              precision={0.2}
+              precision={0.1}
             />
           </div>
         </article>

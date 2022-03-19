@@ -1,11 +1,12 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import { StoreContext } from '../../context/StoreContext';
 import searchIcon from '/src/assets/icons/icon-search.svg';
 import cartIcon from '/src/assets/icons/icon-cart.svg';
 import personIcon from '/src/assets/icons/icon-person.svg';
 
 import { Container } from './styles';
-import { useContext } from 'react';
-import { StoreContext } from '../../context/StoreContext';
-import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { totalQuantity } = useContext(StoreContext);

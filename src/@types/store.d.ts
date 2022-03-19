@@ -25,6 +25,5 @@ declare namespace Store {
     size: number;
     product: Store.IProduct;
     isSaleActive?: boolean;
-    itemTotalPrice: number;
   }
 }
