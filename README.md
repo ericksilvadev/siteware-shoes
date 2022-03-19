@@ -17,9 +17,9 @@ Uma plataforma de e-commerce focada em calçados onde você pode adicionar seus 
 - [TypeScript](https://www.typescriptlang.org/) v4.5.4 - Linguagem tipada baseada em JavaScript
 - [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) v6.2.2 - Roteamento de páginas
 - [Styled Components](https://styled-components.com/) v5.3.3 - Biblioteca de estilização React
-- [json-server](https://github.com/typicode/json-server) v0.17.0 - Fake API para mocks
+- [JSON Server](https://github.com/typicode/json-server) v0.17.0 - Fake API para mocks
 - [axios](https://axios-http.com/) v0.26.1 - Biblioteca para requisições HTTP
-- [MaterialUI](https://mui.com/) v5.5.1 - Biblioteca de componentes pré-programados
+- [Material-UI](https://mui.com/) v5.5.1 - Biblioteca de componentes pré-programados
 
 ## Como rodar a aplicação localmente
 
@@ -57,7 +57,7 @@ _Mais informações sobre o JSON Server e como o desinstalar [aqui](#sobre-o-jso
 npm install -g json-server
 ```
 
-**O servidor rodará por padrão na porta 3000**
+**O servidor rodará por padrão na porta 3000 se não estiver ocupada**
 
 ### 5. Inicie o JSON Server
 
@@ -79,7 +79,7 @@ npm:
 npm run dev
 ```
 
-**A aplocação rodará por padrão na porta 4000**
+**A aplicação rodará por padrão na porta 4000 se não estiver ocupada**
 
 ### 7. Abra no Browser
 
@@ -87,7 +87,7 @@ No seu navegador digite na barra de endereços `http://localhost:4000`
 
 ## Sobre o JSON Server
 
-**O JSON Server é uma REST API falsa usada para implementar mocks no Frontend.**
+**O JSON Server é uma Fake REST API usada para implementar mocks no Frontend.**
 
 Originalmente o JSON Server iniciará na porta 3000 da sua máquina se ela não estiver ocupada.
 
@@ -119,7 +119,7 @@ Resposta:
 ]
 ```
 
-**GET '/products/:id'** retornará o produto com o ID passado no parâmetro da rota.
+**GET '/products/:id'** retornará o produto com o mesmo ID passado no parâmetro da rota.
 
 Ex.: `http://localhost:3000/products/3`
 
