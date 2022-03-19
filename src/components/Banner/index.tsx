@@ -17,6 +17,8 @@ export const Banner = () => {
     changeBannerTimeout = setTimeout(() => {
       currBanner ? setCurrBanner(0) : setCurrBanner(1);
     }, TEN_SECONDS);
+
+    return () => clearInterval(changeBannerTimeout);
   }, [currBanner]);
 
   return (

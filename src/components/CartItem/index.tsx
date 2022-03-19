@@ -1,21 +1,40 @@
-import { Container } from './styles';
+import { useContext, useEffect, useState } from 'react';
+
 import { priceFormatter } from '../../helpers/priceFormatter';
-import trashIcon from '/src/assets/icons/icon-trash.svg';
-import { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
+import { useUpdatePrice } from '../../hooks/useUpdatePrice';
+import trashIcon from '/src/assets/icons/icon-trash.svg';
+
+import { Container } from './styles';
 
 interface ICartItem {
   item: Store.ICart;
 }
 
 export const CartItem: React.FC<ICartItem> = ({ item }) => {
+  const [itemTotalPrice, setItemTotalPrice] = useState(0);
   const { cart, setCart } = useContext(StoreContext);
 
+  useEffect(() => {
+    const { itemTotalPrice: itemTotal } = useUpdatePrice(cart, item.product.id);
+    setItemTotalPrice(itemTotal);
+  }, [cart]);
+
+  // item = { ...item, itemTotalPrice };
+
   const handleUpdateQuantity = (quantity: number) => {
-    if (quantity < 1) quantity = 1;
+    if (quantity < 1) return;
+    if (quantity > item.product.stock) return;
+
+    const itemIndex = cart.findIndex(
+      (cartItem) => cartItem.product.id === item.product.id
+    );
+
+    // Updates cart array without changing it's order
     setCart([
-      ...cart.filter((cartItem) => cartItem.product.id !== item.product.id),
+      ...cart.slice(0, itemIndex),
       { ...item, quantity },
+      ...cart.slice(itemIndex + 1, cart.length),
     ]);
   };
 
@@ -89,8 +108,7 @@ export const CartItem: React.FC<ICartItem> = ({ item }) => {
         )}
 
         <span className="price-info">
-          Valor total destes produtos{' '}
-          <strong>{priceFormatter(item.quantity * item.product.promotionPrice)}</strong>
+          Valor total destes produtos <strong>{priceFormatter(itemTotalPrice)}</strong>
         </span>
       </div>
     </Container>

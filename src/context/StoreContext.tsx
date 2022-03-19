@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import { useUpdatePrice } from '../hooks/useUpdatePrice';
 
 interface IProvider {
   children: ReactNode;
@@ -22,10 +23,7 @@ export const StoreProvider = ({ children }: IProvider) => {
 
   useEffect(() => {
     // Updates total price and quantity every cart update
-    const totalPrice = cart.reduce((acc, curr) => {
-      acc += curr.product.promotionPrice * curr.quantity;
-      return acc;
-    }, 0);
+    const { totalPrice } = useUpdatePrice(cart);
     setTotalPrice(totalPrice);
 
     const subtotalPrice = cart.reduce((acc, curr) => {

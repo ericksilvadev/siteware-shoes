@@ -12,7 +12,7 @@
       "promotionPrice": 219.99,
       "stock": 10,
       "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto",
-      "sale": { "pay": "1", "take": 2 }
+      "sale": { "pay": "1", "take": 2, "salePrice": 219.99 }
     },
     {
       "id": 2,
@@ -52,7 +52,7 @@
       "promotionPrice": 14.99,
       "stock": 10,
       "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque",
-      "sale": { "pay": "10 reais", "take": 3 }
+      "sale": { "pay": "10 reais", "take": 3, "salePrice": 10 }
     },
     {
       "id": 5,

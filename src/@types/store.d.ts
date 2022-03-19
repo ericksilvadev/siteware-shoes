@@ -1,6 +1,7 @@
 declare namespace Store {
   interface ISale {
     pay: string;
+    salePrice: number;
     take: number;
   }
   export interface IProduct {
@@ -23,5 +24,7 @@ declare namespace Store {
     color: string;
     size: number;
     product: Store.IProduct;
+    isSaleActive?: boolean;
+    itemTotalPrice: number;
   }
 }
