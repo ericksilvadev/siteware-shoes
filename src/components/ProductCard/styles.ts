@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   position: relative;
   width: 16rem;
-  background-color: var(--color-box);
+  background-color: var(--color-box-background);
   padding: 1.4rem;
   border-radius: 10px;
   border: 1px solid var(--color-text-complementary);

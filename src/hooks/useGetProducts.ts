@@ -8,6 +8,7 @@ export const useGetProducts = async (endpoint: string, filter?: string) => {
 
     const products: Store.IProduct[] = response.data || [];
 
+    // Check if products is an array
     if (!products.length) {
       return { productDetails: response.data };
     }
@@ -20,6 +21,6 @@ export const useGetProducts = async (endpoint: string, filter?: string) => {
     return { products };
   } catch (err) {
     console.log(err);
-    return { products: [], socks: [], shoes: [] };
+    return { products: [] };
   }
 };

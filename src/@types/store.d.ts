@@ -13,6 +13,7 @@ declare namespace Store {
     rating: number;
     defaultPrice: number;
     promotionPrice: number;
+    stock: number;
     description: string;
     sale?: ISale;
   }

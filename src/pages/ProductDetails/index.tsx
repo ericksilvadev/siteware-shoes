@@ -1,4 +1,4 @@
-import { MouseEventHandler, useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CircularProgress, Rating } from '@mui/material';
 

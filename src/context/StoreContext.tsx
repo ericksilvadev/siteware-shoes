@@ -8,6 +8,7 @@ interface IStoreContext {
   cart: Store.ICart[];
   setCart: (param: Store.ICart[]) => void;
   totalPrice: number;
+  subtotalPrice: number;
   totalQuantity: number;
 }
 
@@ -16,6 +17,7 @@ export const StoreContext = createContext({} as IStoreContext);
 export const StoreProvider = ({ children }: IProvider) => {
   const [cart, setCart] = useState<Store.ICart[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [subtotalPrice, setSubtotalPrice] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
@@ -26,6 +28,12 @@ export const StoreProvider = ({ children }: IProvider) => {
     }, 0);
     setTotalPrice(totalPrice);
 
+    const subtotalPrice = cart.reduce((acc, curr) => {
+      acc += curr.product.defaultPrice * curr.quantity;
+      return acc;
+    }, 0);
+    setSubtotalPrice(subtotalPrice);
+
     const totalQuantity = cart.reduce((acc, curr) => {
       acc += curr.quantity;
       return acc;
@@ -34,7 +42,9 @@ export const StoreProvider = ({ children }: IProvider) => {
   }, [cart]);
 
   return (
-    <StoreContext.Provider value={{ cart, setCart, totalPrice, totalQuantity }}>
+    <StoreContext.Provider
+      value={{ cart, setCart, totalPrice, subtotalPrice, totalQuantity }}
+    >
       {children}
     </StoreContext.Provider>
   );

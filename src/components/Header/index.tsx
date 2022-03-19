@@ -27,7 +27,7 @@ export const Header = () => {
         <div className="cart">
           <img className="icon" src={cartIcon} alt="Carrinho" />
           <button type="button" className="cart">
-            <Link to="/cart">Meu carrinho</Link>
+            <Link to="/checkout">Meu carrinho</Link>
           </button>
           {totalQuantity > 0 && <span className="items-quantity">{totalQuantity}</span>}
 
