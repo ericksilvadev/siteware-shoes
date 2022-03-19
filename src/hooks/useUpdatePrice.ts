@@ -10,7 +10,7 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
       // Updates 'result' based on item sale
       const remainder = currItem.quantity % currItem.product.sale.take;
 
-      const saleAmount = currItem.quantity / currItem.product.sale.take;
+      const saleAmount = Math.floor(currItem.quantity / currItem.product.sale.take);
 
       const itemTotalPrice =
         saleAmount * currItem.product.sale.salePrice +
