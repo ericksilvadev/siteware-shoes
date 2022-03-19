@@ -14,7 +14,7 @@ declare namespace Store {
     rating: number;
     defaultPrice: number;
     promotionPrice: number;
-    stock: number;
+    inventory: number;
     description: string;
     sale?: ISale;
   }

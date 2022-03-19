@@ -29,7 +29,7 @@ export const CartItem: React.FC<ICartItem> = ({ item }) => {
 
   const handleUpdateQuantity = (quantity: number) => {
     if (quantity < 1) return;
-    if (quantity > item.product.stock) return;
+    if (quantity > item.product.inventory) return;
 
     const itemIndex = cart.findIndex(
       (cartItem) => cartItem.product.id === item.product.id
