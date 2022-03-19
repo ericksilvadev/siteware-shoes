@@ -13,6 +13,9 @@ export const Container = styled.div`
     height: 15rem;
     width: 35%;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .price-info {
       display: flex;
@@ -28,6 +31,7 @@ export const Container = styled.div`
       }
 
       &.total {
+        margin: 0.5rem 0;
         strong {
           font-size: 1.5rem;
         }

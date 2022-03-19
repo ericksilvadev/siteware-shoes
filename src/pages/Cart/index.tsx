@@ -21,6 +21,7 @@ export const Cart = () => {
             <span>Limpar carrinho</span>
           </button>
         </div>
+
         {cart.length ? (
           <DefaultCart
             cart={cart}
