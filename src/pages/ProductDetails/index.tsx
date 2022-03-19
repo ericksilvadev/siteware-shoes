@@ -6,7 +6,7 @@ import { StoreContext } from '../../context/StoreContext';
 import { updateCart } from '../../helpers/updateCart';
 import { priceFormatter } from '../../helpers/priceFormatter';
 import { useGetProducts } from '../../hooks/useGetProducts';
-import { SaleLable } from '../../components/SaleLable';
+import { SaleLabel } from '../../components/SaleLabel';
 import { Loading } from '../../components/Loading';
 import cartIcon from '/src/assets/icons/icon-cart.svg';
 
@@ -81,7 +81,7 @@ export const ProductDetails = () => {
 
           {product.sale && (
             <div className="sale-container">
-              <SaleLable product={product} />
+              <SaleLabel product={product} />
 
               <span className={product.category === 'socks' ? 'sale purple' : 'sale'}>
                 Compre <strong>{product.sale.take}</strong> pares e pague somente{' '}

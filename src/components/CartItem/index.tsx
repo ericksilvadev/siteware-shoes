@@ -6,7 +6,7 @@ import { useUpdatePrice } from '../../hooks/useUpdatePrice';
 import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container } from './styles';
-import { SaleLable } from '../SaleLable';
+import { SaleLabel } from '../SaleLabel';
 
 interface ICartItem {
   item: Store.ICart;
@@ -49,7 +49,7 @@ export const CartItem: React.FC<ICartItem> = ({ item }) => {
 
   return (
     <Container className="default-box">
-      {item.product.sale && <SaleLable product={item.product} />}
+      {item.product.sale && <SaleLabel product={item.product} />}
 
       <div className="main-content">
         <div>

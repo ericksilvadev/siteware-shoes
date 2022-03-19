@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Lable = styled.span`
+export const Label = styled.span`
   position: relative;
   background-color: var(--color-sale);
   color: white;

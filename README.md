@@ -29,7 +29,7 @@ Uma plataforma de e-commerce focada em calçados onde você pode adicionar seus 
 git clone git@github.com:ericksilvadev/siteware-shoes.git erick-silva-siteware-shoes
 ```
 
-### 2. Vá para o diretório **erick-silva-siteware-shoes**
+### 2. Vá para o diretório criado
 
 ```zsh
 cd erick-silva-siteware-shoes
@@ -57,7 +57,7 @@ _Mais informações sobre o JSON Server e como o desinstalar [aqui](#sobre-o-jso
 npm install -g json-server
 ```
 
-**O servidor rodará por padrão na porta 3000 se não estiver ocupada**
+**\*O servidor rodará por padrão na porta 3000, se não estiver ocupada**
 
 ### 5. Inicie o JSON Server
 
@@ -79,7 +79,7 @@ npm:
 npm run dev
 ```
 
-**A aplicação rodará por padrão na porta 4000 se não estiver ocupada**
+**\*A aplicação rodará por padrão na porta 4000, se não estiver ocupada**
 
 ### 7. Abra no Browser
 
@@ -87,9 +87,9 @@ No seu navegador digite na barra de endereços `http://localhost:4000`
 
 ## Sobre o JSON Server
 
-**O JSON Server é uma Fake REST API usada para implementar mocks no Frontend.**
+**O JSON Server é uma Fake REST API usado para simular um banco de dados e implementar mocks no Frontend.**
 
-Originalmente o JSON Server iniciará na porta 3000 da sua máquina se ela não estiver ocupada.
+Originalmente o JSON Server iniciará na porta 3000 da sua máquina, se ela não estiver ocupada.
 
 ### Rotas
 
@@ -138,7 +138,7 @@ Resposta:
   "promotionPrice": 199.99,
   "inventory": 10,
   "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
-},
+}
 ```
 
 Mais sobre as rotas do JSON Server [aqui](https://github.com/typicode/json-server#routes)

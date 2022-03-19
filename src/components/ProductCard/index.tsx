@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { priceFormatter } from '../../helpers/priceFormatter';
-import { SaleLable } from '../SaleLable';
+import { SaleLabel } from '../SaleLabel';
 import cartIcon from '/src/assets/icons/icon-cart.svg';
 
 import { Container } from './styles';
@@ -14,7 +14,7 @@ export const ProductCard: React.FC<IProductCard> = ({ product }) => {
   return (
     <Link to={`/product/${product.id}`} style={{ color: '#333' }}>
       <Container className="default-box">
-        {product.sale && <SaleLable product={product} />}
+        {product.sale && <SaleLabel product={product} />}
 
         <img src={product.image} alt={product.name} />
         <h1>{product.name}</h1>
