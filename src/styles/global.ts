@@ -39,6 +39,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
   }
 
+  hr {
+    background-color: #ccc;
+    border: none;
+    height: 1px;
+  }
+
   .icon {
     width: 1rem;
     height: 1rem;
@@ -48,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--color-accent);
     border: none;
     cursor: pointer;
-    height: 2.2rem;
+    height: 2.4rem;
     border-radius: 5px;
     width: 100%;
     color: white;

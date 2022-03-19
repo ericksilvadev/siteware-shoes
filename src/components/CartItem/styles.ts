@@ -18,12 +18,6 @@ export const Container = styled.section`
     transform: scale(0.95);
   }
 
-  hr {
-    background-color: #ccc;
-    border: none;
-    height: 1px;
-  }
-
   .main-content {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+
 import { useUpdatePrice } from '../hooks/useUpdatePrice';
 
 interface IProvider {

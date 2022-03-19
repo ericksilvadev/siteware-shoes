@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 
 import { StoreContext } from '../../context/StoreContext';
-import { priceFormatter } from '../../helpers/priceFormatter';
-import { CartItem } from '../../components/CartItem';
-import { Loading } from '../../components/Loading';
 import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container, Content } from './styles';
+import { DefaultCart } from '../../components/DefaultCart';
+import { EmptyCart } from '../../components/EmptyCart';
 
 export const Cart = () => {
   const { cart, totalPrice, subtotalPrice, setCart } = useContext(StoreContext);
@@ -22,39 +21,18 @@ export const Cart = () => {
             <span>Limpar carrinho</span>
           </button>
         </div>
-
-        <section className="products-area">
-          <div className="products-list">
-            {cart.map((item) => (
-              <CartItem key={item.product.id} item={item} />
-            ))}
-          </div>
-
-          <aside className="resume default-box">
-            <h1>Resumo da compra</h1>
-
-            <div className="price-info">
-              <span>Subtotal</span>
-              <strong>{priceFormatter(subtotalPrice)}</strong>
-            </div>
-
-            <div className="price-info">
-              <span>Descontos</span>
-              <strong>{priceFormatter(subtotalPrice - totalPrice)}</strong>
-            </div>
-
+        {cart.length ? (
+          <DefaultCart
+            cart={cart}
+            subtotalPrice={subtotalPrice}
+            totalPrice={totalPrice}
+          />
+        ) : (
+          <>
             <hr />
-
-            <div className="price-info total">
-              <span>Total</span>
-              <strong>{priceFormatter(totalPrice)}</strong>
-            </div>
-
-            <button type="button" className="green">
-              Finalizar compra
-            </button>
-          </aside>
-        </section>
+            <EmptyCart />
+          </>
+        )}
       </Content>
     </Container>
   );
