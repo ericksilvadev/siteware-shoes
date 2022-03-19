@@ -21,7 +21,7 @@ export const ProductCard: React.FC<IProductCard> = ({ product }) => {
 
         <div className="pricing">
           <span className="default-price">{priceFormatter(product.defaultPrice)}</span>
-          <span className="price">{priceFormatter(product.promotionPrice)}</span>
+          <span className="price">{priceFormatter(product.price)}</span>
         </div>
 
         <button type="button" className="green">

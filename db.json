@@ -9,7 +9,7 @@
       "sizes": [36, 38, 40, 42, 44],
       "rating": 4.6,
       "defaultPrice": 319.99,
-      "promotionPrice": 219.99,
+      "price": 219.99,
       "inventory": 10,
       "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto",
       "sale": { "pay": "1", "take": 2, "salePrice": 219.99 }
@@ -23,7 +23,7 @@
       "sizes": [36, 38, 40, 42, 44],
       "rating": 4.5,
       "defaultPrice": 429.99,
-      "promotionPrice": 369.99,
+      "price": 369.99,
       "inventory": 10,
       "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
     },
@@ -36,7 +36,7 @@
       "sizes": [36, 38, 40, 42, 44],
       "rating": 5,
       "defaultPrice": 239.99,
-      "promotionPrice": 199.99,
+      "price": 199.99,
       "inventory": 10,
       "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
     },
@@ -49,7 +49,7 @@
       "sizes": [36, 38, 40, 42, 44],
       "rating": 4.4,
       "defaultPrice": 39.99,
-      "promotionPrice": 14.99,
+      "price": 14.99,
       "inventory": 10,
       "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque",
       "sale": { "pay": "10 reais", "take": 3, "salePrice": 10 }
@@ -63,7 +63,7 @@
       "sizes": [36, 38, 40, 42, 44],
       "rating": 4.5,
       "defaultPrice": 49.99,
-      "promotionPrice": 25.99,
+      "price": 25.99,
       "inventory": 10,
       "description": "Proteja seus pés durante sua rotina de treinos e no dia a dia usando a Meia Asics. Fabricada com material macio ao toque"
     }

@@ -13,8 +13,7 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
       const saleAmount = Math.floor(currItem.quantity / currItem.product.sale.take);
 
       const itemTotalPrice =
-        saleAmount * currItem.product.sale.salePrice +
-        remainder * currItem.product.promotionPrice;
+        saleAmount * currItem.product.sale.salePrice + remainder * currItem.product.price;
       acc += itemTotalPrice;
 
       if (id && currItem.product.id === id) {
@@ -26,12 +25,12 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
     }
 
     // Updates 'result' based on a normal product
-    acc += currItem.product.promotionPrice * currItem.quantity;
+    acc += currItem.product.price * currItem.quantity;
 
     if (id && currItem.product.id === id) {
       result = {
         ...result,
-        itemTotalPrice: currItem.product.promotionPrice * currItem.quantity,
+        itemTotalPrice: currItem.product.price * currItem.quantity,
         totalPrice: acc,
       };
     }
