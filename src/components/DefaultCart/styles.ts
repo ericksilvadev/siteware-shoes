@@ -32,10 +32,15 @@ export const Container = styled.div`
 
       &.total {
         margin: 0.5rem 0;
+        align-items: center;
         strong {
           font-size: 1.5rem;
         }
       }
+    }
+
+    button {
+      font-size: 1rem;
     }
   }
 `;

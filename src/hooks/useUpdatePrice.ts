@@ -5,19 +5,19 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
     isSaleActive: false,
   };
 
-  cart.reduce((acc, curr) => {
-    if (curr.product.sale?.take && curr.quantity >= curr.product.sale?.take) {
-      // Updates total price according to item sale
-      const remainder = curr.quantity % curr.product.sale.take;
+  cart.reduce((acc, currItem) => {
+    if (currItem.product.sale?.take && currItem.quantity >= currItem.product.sale?.take) {
+      // Updates 'result' based on item sale
+      const remainder = currItem.quantity % currItem.product.sale.take;
 
-      const saleAmount = curr.quantity / curr.product.sale.take;
+      const saleAmount = currItem.quantity / currItem.product.sale.take;
 
       const itemTotalPrice =
-        saleAmount * curr.product.sale.salePrice +
-        remainder * curr.product.promotionPrice;
+        saleAmount * currItem.product.sale.salePrice +
+        remainder * currItem.product.promotionPrice;
       acc += itemTotalPrice;
 
-      if (id && curr.product.id === id) {
+      if (id && currItem.product.id === id) {
         result = { isSaleActive: true, itemTotalPrice, totalPrice: acc };
       }
 
@@ -25,12 +25,13 @@ export const useUpdatePrice = (cart: Store.ICart[], id?: number) => {
       return acc;
     }
 
-    acc += curr.product.promotionPrice * curr.quantity;
+    // Updates 'result' based on a normal product
+    acc += currItem.product.promotionPrice * currItem.quantity;
 
-    if (id && curr.product.id === id) {
+    if (id && currItem.product.id === id) {
       result = {
         ...result,
-        itemTotalPrice: curr.product.promotionPrice * curr.quantity,
+        itemTotalPrice: currItem.product.promotionPrice * currItem.quantity,
         totalPrice: acc,
       };
     }

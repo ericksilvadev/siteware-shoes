@@ -10,7 +10,7 @@ export const Banner = () => {
   let changeBannerTimeout: number;
 
   useEffect(() => {
-    // Changes banner's background every 10 seconds
+    // Changes banner background every 10 seconds
 
     const TEN_SECONDS = 10000; // 10 seconds in miliseconds
 

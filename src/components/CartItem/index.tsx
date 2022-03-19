@@ -3,10 +3,10 @@ import { useContext, useEffect, useState } from 'react';
 import { priceFormatter } from '../../helpers/priceFormatter';
 import { StoreContext } from '../../context/StoreContext';
 import { useUpdatePrice } from '../../hooks/useUpdatePrice';
+import { SaleLabel } from '../SaleLabel';
 import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container } from './styles';
-import { SaleLabel } from '../SaleLabel';
 
 interface ICartItem {
   item: Store.ICart;

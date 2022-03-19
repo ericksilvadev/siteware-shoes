@@ -1,5 +1,6 @@
 import { priceFormatter } from '../../helpers/priceFormatter';
 import { CartItem } from '../CartItem';
+
 import { Container } from './styles';
 
 interface IDefaultCart {
@@ -15,11 +16,11 @@ export const DefaultCart: React.FC<IDefaultCart> = ({
 }) => {
   return (
     <Container>
-      <div className="products-list">
+      <section className="products-list">
         {cart.map((item) => (
           <CartItem key={item.product.id} item={item} />
         ))}
-      </div>
+      </section>
 
       <aside className="resume default-box">
         <h1>Resumo da compra</h1>

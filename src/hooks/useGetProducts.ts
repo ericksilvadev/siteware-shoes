@@ -1,7 +1,5 @@
 import { api } from '../services/api';
 
-// Custom hook to get products
-
 export const useGetProducts = async (endpoint: string, filter?: string) => {
   try {
     const response = await api.get(endpoint);

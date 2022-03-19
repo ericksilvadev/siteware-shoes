@@ -36,6 +36,10 @@ export const Container = styled.section`
       .info {
         margin-left: 1.5rem;
 
+        h1 {
+          font-size: 1.2rem;
+        }
+
         span {
           color: var(--color-text-complementary);
           line-height: 1.9rem;

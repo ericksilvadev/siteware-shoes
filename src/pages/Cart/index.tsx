@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 
 import { StoreContext } from '../../context/StoreContext';
+import { DefaultCart } from '../../components/DefaultCart';
+import { EmptyCart } from '../../components/EmptyCart';
 import trashIcon from '/src/assets/icons/icon-trash.svg';
 
 import { Container, Content } from './styles';
-import { DefaultCart } from '../../components/DefaultCart';
-import { EmptyCart } from '../../components/EmptyCart';
 
 export const Cart = () => {
   const { cart, totalPrice, subtotalPrice, setCart } = useContext(StoreContext);

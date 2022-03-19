@@ -18,10 +18,12 @@ export const ProductCard: React.FC<IProductCard> = ({ product }) => {
 
         <img src={product.image} alt={product.name} />
         <h1>{product.name}</h1>
+
         <div className="pricing">
           <span className="default-price">{priceFormatter(product.defaultPrice)}</span>
           <span className="price">{priceFormatter(product.promotionPrice)}</span>
         </div>
+
         <button type="button" className="green">
           <img className="icon" src={cartIcon} alt="Comprar" />
           Comprar

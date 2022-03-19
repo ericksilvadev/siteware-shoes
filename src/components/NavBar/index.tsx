@@ -23,7 +23,7 @@ export const NavBar = () => {
         <nav>
           <Link
             to="/"
-            className={pathname === '/' ? 'selected icon-container' : ' icon-container'}
+            className={pathname === '/' ? 'selected icon-container' : 'icon-container'}
           >
             <img src={homeIcon} alt="Produtos" className="icon" />
           </Link>
@@ -31,7 +31,7 @@ export const NavBar = () => {
           <Link
             to="category/shoes"
             className={
-              pathname.includes('/shoes') ? 'selected icon-container' : ' icon-container'
+              pathname.includes('/shoes') ? 'selected icon-container' : 'icon-container'
             }
           >
             <img src={shoeIcon} alt="Calçados" className="icon" />
@@ -40,7 +40,7 @@ export const NavBar = () => {
           <Link
             to="category/socks"
             className={
-              pathname.includes('/socks') ? 'selected icon-container' : ' icon-container'
+              pathname.includes('/socks') ? 'selected icon-container' : 'icon-container'
             }
           >
             <img src={sockIcon} alt="Meias" className="icon" />
