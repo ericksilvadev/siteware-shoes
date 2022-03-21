@@ -57,15 +57,15 @@ _Mais informações sobre o JSON Server e como o desinstalar [aqui](#sobre-o-jso
 npm install -g json-server
 ```
 
-**\*O servidor rodará por padrão na porta 3000, se não estiver ocupada**
-
-### 5. Inicie o JSON Server
+### 5. Inicie o JSON Server\*
 
 ```zsh
 json-server --watch db.json
 ```
 
-### 6. Rode a aplicação
+**\*O servidor rodará por padrão na porta 3000, se não estiver ocupada**
+
+### 6. Rode a aplicação\*\*
 
 yarn:
 
@@ -79,7 +79,7 @@ npm:
 npm run dev
 ```
 
-**\*A aplicação rodará por padrão na porta 4000, se não estiver ocupada**
+**\*\*A aplicação rodará por padrão na porta 4000, se não estiver ocupada**
 
 ### 7. Abra no Browser
 
@@ -87,13 +87,13 @@ No seu navegador digite na barra de endereços `http://localhost:4000`
 
 ## Sobre o JSON Server
 
-**O JSON Server é uma Fake REST API usado para simular um banco de dados e implementar mocks no Frontend.**
+**O JSON Server é uma Fake REST API usado para simular uma API e implementar mocks no Frontend.**
 
-Originalmente o JSON Server iniciará na porta 3000 da sua máquina, se ela não estiver ocupada.
+Originalmente o JSON Server iniciará na porta 3000 da sua máquina, se ela não estiver ocupada. Todos os dados simulados podem ser visualizados e manipulados através do arquivo `db.json`.
 
 ### Rotas
 
-**GET '/products'** retornará toda a listagem de produtos cadastrados.
+**`GET '/products'`** retornará toda a listagem de produtos cadastrados.
 
 Ex.: `http://localhost:3000/products`
 
@@ -110,7 +110,7 @@ Resposta:
     "sizes": [36, 38, 40, 42, 44],
     "rating": 4.6,
     "defaultPrice": 319.99,
-    "promotionPrice": 219.99,
+    "price": 219.99,
     "inventory": 10,
     "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto",
     "sale": { "pay": "1", "take": 2, "salePrice": 219.99 }
@@ -119,7 +119,9 @@ Resposta:
 ]
 ```
 
-**GET '/products/:id'** retornará o produto com o mesmo ID passado no parâmetro da rota.
+---
+
+**`GET '/products/:id'`** retornará o produto com o mesmo ID passado no parâmetro da rota.
 
 Ex.: `http://localhost:3000/products/3`
 
@@ -135,7 +137,7 @@ Resposta:
   "sizes": [36, 38, 40, 42, 44],
   "rating": 5,
   "defaultPrice": 239.99,
-  "promotionPrice": 199.99,
+  "price": 199.99,
   "inventory": 10,
   "description": "Com ótimo amortecimento em espuma, o Tênis Nike Masculino Revolution 5 é ideal para os corredores que buscam leveza e conforto"
 }
